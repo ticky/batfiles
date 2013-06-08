@@ -1,4 +1,5 @@
-~=cd %USERPROFILE%
+~=chdir /D %USERPROFILE%
+cd=chdir /D $1
 clear=cls
 fn=dir $1 /S /B
 gd=git diff
@@ -13,4 +14,5 @@ gc=git commit
 gco=git checkout
 ga=git add .
 ls=dir /W & echo. && echo               Steve Ballmer says: "It's 'dir', not 'ls', you hippie!"
+subl="C:\Program Files\Sublime Text 2\sublime_text.exe" $1
 x=exit
