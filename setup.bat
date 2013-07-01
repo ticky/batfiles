@@ -5,16 +5,13 @@ echo https://github.com/geoffstokes/batfiles
 echo Setting up...
 echo.
 echo * Installing cmd_profile script...
-echo.
-reg import setup\reg\cmd_profile.reg
-echo.
+reg import setup\reg\cmd_profile.reg 2>nul
 echo * Setting default colour scheme...
-echo.
-reg import setup\reg\cmd_colours.reg
-echo.
+reg import setup\reg\cmd_colours.reg 2>nul
 echo * Installing clink scripts...
-echo.
-copy setup\clink\* %LOCALAPPDATA%\clink
+copy setup\clink\* %LOCALAPPDATA%\clink >nul
+echo * Setting PowerShell execution policy...
+powershell -Command "& {Set-ExecutionPolicy -ExecutionPolicy RemoteSigned}"
 echo.
 echo Installation complete. Please restart your Command Prompt.
 pause>nul

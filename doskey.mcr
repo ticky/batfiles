@@ -16,5 +16,6 @@ gr=git remote -v
 gs=git status
 gu=git up
 ls=dir /W "$*" & echo. && echo               Steve Ballmer says: "It's 'dir', not 'ls', you hippie!"
+ntget=powershell "%USERPROFILE%\batfiles\bin\ntget.ps1" "$1" "$2"
 subl="C:\Program Files\Sublime Text 2\sublime_text.exe" "$*"
 x=exit
