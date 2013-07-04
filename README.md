@@ -21,7 +21,7 @@ A simple set of unix-like and helpful macros for dealing with the Windows comman
 
 1. Clone this repo into your `%USERPROFILE%/batfiles` directory;
    `git clone https://github.com/geoffstokes/batfiles.git %USERPROFILE%/batfiles`
-2. Run `setup.bat` from the `batfiles` directory (you can double-click it)
+2. Run `setup.bat` from the `batfiles` directory.
 
 ## Usage
 * `~`: Go to your user profile directory
@@ -29,19 +29,24 @@ A simple set of unix-like and helpful macros for dealing with the Windows comman
 * `clear`: clear the screen
 * `fn`: search recursively through the current directory and its subdirectories
 * Git shortcuts
-    * `gd` for `git diff`
-    * `gl` for `git log`
-    * `gu` for `git up`
-    * `gs` for `git status`
-    * `gf` for `git fetch`
-    * `gr` for `git remote -v`
-    * `gp` for `git push`
-    * `gpl` for `git pull`
-    * `gc` for `git commit`
-    * `gco` for `git checkout`
-    * `ga` for `git add .`
+    * `ga`: `git add`
+    * `gb`: Show all local and remote branches (`git branch -av`)
+    * `gbp`: Show all unmerged branches, with their remote equivalents (if any. equivalent to `git branch -avv --no-merged`)
+    * `gc`: `git commit -v`
+    * `gco`: `git checkout`
+    * `gd`: `git diff`
+    * `gdc`: `git diff --cached`
+    * `gdh`: `git diff HEAD`
+    * `gf`: `git fetch`
+    * `gl`: `git log`
+    * `gp`: `git push`
+    * `gpl`: `git pull`
+    * `gr`: `git remote -v`
+    * `gs`: `git status`
+    * `gu`: `git up`
 * `ls`: run `dir` in a vaguely unix-like way (and get a message from Steve)
 * `ntget`: insanely simplistic file download utility (written in Powershell)
+* `source`: reload the `doskey` macro file
 * `x`: shortcut to exit
 
 ## How
@@ -51,5 +56,7 @@ This uses `doskey` to set up macros by running it whenever a command prompt inst
 These changes are per-user and can (and will) be expanded upon by adding commands (setting variables, etc) to `cmd_profile.bat` and/or adding aliases to `doskey.mcr`.
 
 `ntget` is a (very) simple PowerShell script which is called from a `doskey` macro.
+
+_**NOTE**: A previous version changed your PowerShell ExecutionPolicy to `RemoteSigned`. This is no longer the case. To restore the default policy, you can run this command from cmd; `powershell -Command "& {Set-ExecutionPolicy -ExecutionPolicy Restricted}"`_
 
 The colours are overridden in the registry (and require you to have not customised them for any command prompt shortcut), and the improved prompt uses Clink.
